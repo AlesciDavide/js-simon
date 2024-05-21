@@ -32,5 +32,30 @@ let arrayNumberRandom = [];
 /* stampo i numeri generati random in pagina */
 
 let divEl = document.querySelector('div#container');
-divEl.innerHTML = (`<p>${arrayNumberRandom}</p>`);
+divEl.innerHTML = (arrayNumberRandom);
 
+
+
+
+setTimeout(numeriUtente, 30000, arrayNumberRandom);
+
+
+
+/* creo la funzione per il check dei numeri inseriti dall'utente */
+function numeriUtente(arrayNumberRandom){
+    
+    let arrayNumeriUtente = [];
+    let arrayNumeriIndovinati = [];
+    let k = 0;
+        for(let i = 0; i < 5; i++){
+            arrayNumeriUtente[i] = Number.parseInt(prompt(`Procedi ad inserire i numeri, uno alla volta. Numero ${i+1} da inserire!`));
+        }
+        for(let i = 0; i < 5; i++){
+            if(arrayNumberRandom.includes(arrayNumeriUtente[i])){
+                arrayNumeriIndovinati[k] = arrayNumeriUtente[i];
+                k++;
+            }
+        }
+
+    divEl.innerHTML = (`Hai inserito correttamente ${k} numeri. I numeri sono ${arrayNumeriIndovinati}.`);
+}
