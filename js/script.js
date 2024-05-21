@@ -27,7 +27,6 @@ let arrayNumberRandom = [];
     for(let i = 0; arrayNumberRandom.length < 5; i++){
         arrayNumberRandom[i] = checkNumberRandom(arrayNumberRandom);
     }
-    console.log(arrayNumberRandom);
 
 /* stampo i numeri generati random in pagina */
 
