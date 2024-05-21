@@ -36,17 +36,13 @@ for(let i = 0; i < 5; i++){
     divEl.innerHTML += (`<p class="numeri">${arrayNumberRandom[i]}</p>`);
 }
 
-
 /* creo una funzione che mi cancella i numeri generati random dal dom  */
 setTimeout(function(){
     divEl.innerHTML = ('');
 }, 29500);
 
-
 /* imposto il timeout per l'avvio della funzine */
 setTimeout(numeriUtente, 30000, arrayNumberRandom);
-
-
 
 /* creo la funzione per il check dei numeri inseriti dall'utente */
 function numeriUtente(arrayNumberRandom){
@@ -63,5 +59,9 @@ function numeriUtente(arrayNumberRandom){
                 k++;
             }
         }
-        divEl.innerHTML = (`<p class="risultato">Hai inserito correttamente ${k} numeri.<br> I numeri sono ${arrayNumeriIndovinati}.</p>`);
+        divEl.innerHTML = (`<div class="risultato">Hai inserito correttamente ${k} numeri. E i numeri sono:</div>`);
+        for(let i = 0; i < k; i++){
+            divEl.innerHTML += (`<p class="numeri">${arrayNumeriIndovinati[i]}</p>`);
+        }
+
 }
