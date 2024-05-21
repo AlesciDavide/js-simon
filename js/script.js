@@ -32,11 +32,18 @@ let arrayNumberRandom = [];
 /* stampo i numeri generati random in pagina */
 
 let divEl = document.querySelector('div#container');
-divEl.innerHTML = (arrayNumberRandom);
+for(let i = 0; i < 5; i++){
+    divEl.innerHTML += (`<p class="numeri">${arrayNumberRandom[i]}</p>`);
+}
 
 
+/* creo una funzione che mi cancella i numeri generati random dal dom  */
+setTimeout(function(){
+    divEl.innerHTML = ('');
+}, 29500);
 
 
+/* imposto il timeout per l'avvio della funzine */
 setTimeout(numeriUtente, 30000, arrayNumberRandom);
 
 
@@ -56,6 +63,5 @@ function numeriUtente(arrayNumberRandom){
                 k++;
             }
         }
-
-    divEl.innerHTML = (`Hai inserito correttamente ${k} numeri. I numeri sono ${arrayNumeriIndovinati}.`);
+        divEl.innerHTML = (`<p class="risultato">Hai inserito correttamente ${k} numeri.<br> I numeri sono ${arrayNumeriIndovinati}.</p>`);
 }
