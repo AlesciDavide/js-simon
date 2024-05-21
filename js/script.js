@@ -61,7 +61,7 @@ function numeriUtente(arrayNumberRandom){
         }
         divEl.innerHTML = (`<div class="risultato">Hai inserito correttamente ${k} numeri. E i numeri sono:</div>`);
         for(let i = 0; i < k; i++){
-            divEl.innerHTML += (`<p class="numeri">${arrayNumeriIndovinati[i]}</p>`);
+            divEl.innerHTML += (`<p class="numeriFine">${arrayNumeriIndovinati[i]}</p>`);
         }
 
 }
